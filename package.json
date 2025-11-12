@@ -5,7 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm --filter @azion-ai-would-you-rather/web dev",
+    "dev:api": "pnpm --filter @azion-ai-would-you-rather/api dev",
     "build": "pnpm --filter @azion-ai-would-you-rather/web build",
+    "build:api": "pnpm --filter @azion-ai-would-you-rather/api build",
+    "deploy:api": "pnpm --filter @azion-ai-would-you-rather/api deploy",
     "lint": "pnpm --recursive lint",
     "preview": "pnpm --filter @azion-ai-would-you-rather/web preview",
     "typecheck": "pnpm --recursive typecheck",
