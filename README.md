@@ -6,7 +6,8 @@ A monorepo for the Azion AI "Would You Rather" application, managed with pnpm wo
 
 ```
 ├── apps/
-│   └── web/                 # Main React application
+│   ├── web/                 # Main React application
+│   └── serverless/          # Azion Edge Function for AI API
 ├── packages/
 │   └── ui/                  # Shared UI components
 ├── pnpm-workspace.yaml      # Workspace configuration
@@ -59,3 +60,16 @@ pnpm --recursive <command>
 
 - **@azion-ai-would-you-rather/web**: Main React application with Vite, TypeScript, and Tailwind CSS
 - **@azion-ai-would-you-rather/ui**: Shared UI components library
+- **apps/serverless**: Azion Edge Function for generating "Would you rather" dilemmas using AI
+
+## Serverless Function
+
+The serverless function is deployed on Azion Edge Computing and provides an API endpoint for generating AI-powered "Would you rather" dilemmas.
+
+**Live URL**: https://mupojq1z1uu.map.azionedge.net/
+
+### Features
+- Generates dilemmas in Portuguese (PT-BR)
+- Random theme selection from Azion-related topics
+- Uses Azion AI with Qwen model
+- Returns structured JSON responses
