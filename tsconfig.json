@@ -1,7 +1,14 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+    {
+      "path": "./apps/web"
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@azion-ai-would-you-rather/*": ["packages/*/src"]
+    }
+  }
 }
