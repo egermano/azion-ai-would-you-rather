@@ -1,4 +1,4 @@
-const themes = ["Plataforma da Azion", "Security", "Build", "Application"];
+const themes = ["Plataforma da Azion", "Cyber Security", "Web Development"];
 
 const mainPrompt = `Gere um dilema "Would you rather" em PT-BR. Responda JSON com optionA, optionB, theme, difficulty. Evite conteúdo sensível. 
    Se respeitar o tema informado.
@@ -6,8 +6,22 @@ const mainPrompt = `Gere um dilema "Would you rather" em PT-BR. Responda JSON co
    Responda apenas o JSON, sem nenhuma notação extra ou texto que não seja a resposta em JSON.
   `;
 
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization"
+};
+
 async function handleRequest(event) {
   const { request, args } = event;
+
+  // Handle CORS preflight requests
+  if (request.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 200,
+      headers: CORS_HEADERS
+    });
+  }
 
   const theme = themes[Math.floor(Math.random() * themes.length)];
   const difficulty = "easy";
@@ -35,7 +49,10 @@ async function handleRequest(event) {
 
   return new Response(JSON.stringify(modelResponse), {
     status: 200,
-    headers: { "Content-Type": "application/json" },
+    headers: { 
+      "Content-Type": "application/json",
+      ...CORS_HEADERS
+    },
   });
 }
 
@@ -47,7 +64,10 @@ addEventListener("fetch", (event) => {
   } catch (e) {
     return new Response(JSON.stringify(e), {
       status: 500,
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        ...CORS_HEADERS
+      },
     });
   }
 });

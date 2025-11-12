@@ -73,3 +73,7 @@ The serverless function is deployed on Azion Edge Computing and provides an API 
 - Random theme selection from Azion-related topics
 - Uses Azion AI with Qwen model
 - Returns structured JSON responses
+- Web app integration with real-time API consumption
+- Local storage of answers and questions
+- Dynamic question loading
+- Theme and difficulty display

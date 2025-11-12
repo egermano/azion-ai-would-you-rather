@@ -77,3 +77,14 @@ A função inclui logs para debug que podem ser visualizados no console da Azion
 ## Tratamento de Erros
 
 A função inclui tratamento de erros que retorna uma resposta JSON com status 500 em caso de falha na execução.
+
+## CORS (Cross-Origin Resource Sharing)
+
+A função está configurada para permitir requisições cross-origin:
+
+- **Access-Control-Allow-Origin**: `*` (permite qualquer origem)
+- **Access-Control-Allow-Methods**: `GET, POST, OPTIONS`
+- **Access-Control-Allow-Headers**: `Content-Type, Authorization`
+- **Suporte a Preflight**: Responde adequadamente a requisições OPTIONS
+
+Isso permite que aplicações web rodando em diferentes domínios consumam a API sem problemas de CORS.
