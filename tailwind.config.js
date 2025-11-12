@@ -11,8 +11,8 @@ export default {
         'secondary': '#2E2A3E',
         'neutral': '#CBC7CB',
         'surface-light': '#F4F0F2',
-        'surface-dark': '#2E2A3E',
-        'surface-dark-card': '#3A3548',
+        'surface-dark': '#1c1c1c',
+        'surface-dark-card': '#2a2a2a',
       },
       fontFamily: {
         sans: ['Sora', 'sans-serif'],

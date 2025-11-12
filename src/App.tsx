@@ -2,13 +2,12 @@ import { useState } from 'react';
 import QuestionScreen from './components/QuestionScreen';
 import SummaryScreen from './components/SummaryScreen';
 import { questions } from './data/questions';
-import type { Question, Answer } from './types';
+import type { Answer } from './types';
 
 function App() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleAnswer = (questionId: number, selectedOption: 'A' | 'B') => {
     if (isTransitioning) return;
@@ -33,16 +32,8 @@ function App() {
   const isComplete = answers.length === questions.length;
 
   return (
-    <div className={isDarkMode ? 'dark' : ''}>
-      <div className="min-h-screen bg-surface-light dark:bg-surface-dark transition-colors duration-300">
-        <button
-          onClick={() => setIsDarkMode(!isDarkMode)}
-          className="absolute top-4 right-4 z-10 px-4 py-2 rounded-lg bg-neutral text-text-dark text-sm font-medium hover:opacity-80 transition-opacity"
-          aria-label="Toggle dark mode"
-        >
-          {isDarkMode ? '☀️' : '🌙'}
-        </button>
-
+    <div className="dark">
+      <div className="min-h-screen bg-[#1c1c1c]">
         {!isComplete ? (
           <QuestionScreen
             question={questions[currentQuestionIndex]}
