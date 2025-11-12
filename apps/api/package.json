@@ -1,11 +1,15 @@
 {
-  "name": "hono-boilerplate",
+  "name": "@azion-ai-would-you-rather/api",
   "version": "1.0.0",
-  "description": "hono boilerplate",
+  "description": "Azion AI Would You Rather API",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "DEBUG=true npx --yes edge-functions@6.2.0 dev",
+    "build": "DEBUG=true npx --yes edge-functions@6.2.0 build",
+    "deploy": "DEBUG=true npx --yes edge-functions@6.2.0 deploy --local",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "keywords": [],
   "author": "aziontech",
@@ -15,6 +19,8 @@
     "hono": "^4.5.3"
   },
   "devDependencies": {
-    "typescript": "^5.4.2"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.2",
+    "edge-functions": "^6.2.0"
   }
 }
