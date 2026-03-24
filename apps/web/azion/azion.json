@@ -1,0 +1,52 @@
+{
+  "name": "ai-would-you-rather",
+  "bucket": "ai-would-you-rather",
+  "preset": "react",
+  "env": "production",
+  "prefix": "20251112161334",
+  "not-first-run": true,
+  "function": [],
+  "application": {
+    "id": 1762972169,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 0,
+    "name": "__DEFAULT__",
+    "domain_name": "",
+    "url": ""
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": null,
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 489164,
+        "name": "Deliver Static Assets",
+        "phase": "request"
+      },
+      {
+        "id": 489165,
+        "name": "Redirect to index.html",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": [],
+  "workloads": {
+    "id": 0,
+    "name": "",
+    "domains": null,
+    "url": "",
+    "deployment_id": null
+  },
+  "connectors": [
+    {
+      "id": 1333,
+      "name": "ai-would-you-rather"
+    }
+  ]
+}

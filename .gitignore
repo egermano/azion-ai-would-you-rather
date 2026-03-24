@@ -21,3 +21,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+#Paths added by Azion CLI
+.edge/
+.vulcan
+.open-next
